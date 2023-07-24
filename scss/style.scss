@@ -3,11 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
 
 :root {
-    --slider-scale: 1; // Определение CSS переменной с дефолтным значением
-}
-@media (max-width: 768px) {
-    :root {
-        --slider-scale: 0.8; // Новое значение масштабирования для ширин меньше 768px
+    --swiper-navigation-size: 44px !important;
+    @media (max-width: 767px) {
+        --swiper-navigation-size: 5.74vw !important;
     }
 }
 
@@ -43,8 +41,8 @@ body {
         }
     }
     &__logo img {
-        @media (max-width: 380px) {
-            width: 320px;
+        @media (max-width: 400px) {
+            width: 288px;
         }
     }
 
@@ -97,7 +95,7 @@ body {
         background-color: white;
         border: 1px solid #002d96;
         margin-left: 20px;
-        @media (max-width: 370px) {
+        @media (max-width: 400px) {
             width: 120px;
             font-size: 12px;
         }
@@ -139,10 +137,6 @@ body {
         justify-content: space-between;
         align-items: center;
         margin: 15px 0;
-
-        // @media (max-width: 991px) {
-        //     width: 100%;
-        // }
     }
 
     &__menu {
@@ -156,8 +150,11 @@ body {
     }
 
     &__menu a:first-child {
-        white-space: wrap;
-        width: 83px;
+        white-space: nowrap;
+        @media (max-width: 400px) {
+            white-space: wrap;
+            width: 83px;
+        }
     }
 }
 
@@ -228,6 +225,12 @@ body {
     &__installment {
         margin-right: 32px;
         margin-bottom: 17px;
+        img {
+            @media (max-width: 400px) {
+                width: calc(100vw - 32px);
+                margin-right: 0;
+            }
+        }
     }
 }
 .form {
@@ -250,6 +253,9 @@ body {
         border: 1px solid black;
         margin-right: 16px;
         margin-bottom: 16px;
+        @media (max-width: 400px) {
+            width: calc(100vw - 32px);
+        }
     }
 
     &__phone::placeholder {
@@ -273,8 +279,11 @@ body {
         text-align: left;
         margin-bottom: 10px;
         background-image: url("../img/arrow-white.png");
-        background-position: 285px 50%;
+        background-position: right 30px center;
         background-repeat: no-repeat;
+        @media (max-width: 400px) {
+            width: calc(100vw - 32px);
+        }
     }
     &__agreement {
         display: flex;
@@ -322,13 +331,16 @@ body {
     @extend %Open_Sans_fz14_400;
     width: 461px;
     height: 51px;
-
     padding-left: 29px;
     text-align: left;
 
+    @media (max-width: 575px) {
+        width: 90vw;
+    }
+
     &_blue {
         background-image: url("../img/arrow-white.png");
-        background-position: 409px 50%;
+        background-position: right 30px center;
         background-repeat: no-repeat;
         border: 1px solid #002d96;
         background-color: #002d96;
@@ -338,7 +350,7 @@ body {
         border: 1px solid black;
         background-color: white;
         background-image: url("../img/arrow-black.png");
-        background-position: 409px 50%;
+        background-position: right 30px center;
         background-repeat: no-repeat;
     }
 
@@ -346,15 +358,11 @@ body {
         margin-bottom: 14px;
         margin-top: 14px;
         background-image: url("../img/arrow-white.png");
-        background-position: 409px 50%;
+        background-position: right 30px center;
         background-repeat: no-repeat;
         border: 1px solid #ccd5ea;
         background-color: #ccd5ea;
     }
-}
-.slick-slide {
-    min-width: 0;
-    min-height: 0;
 }
 
 .offer {
@@ -365,9 +373,18 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
+
     height: 508px;
     @media (max-width: 1199px) {
         background-position: right 30vw top;
+    }
+
+    @media (max-width: 767px) {
+        height: 66.23vw;
+        background-size: cover;
+    }
+    @media (max-width: 575px) {
+        margin-top: 50px;
     }
 
     &__wrap {
@@ -377,10 +394,6 @@ body {
         min-width: 0;
         min-height: 0;
         flex-wrap: wrap;
-        transform: scale(var(--slider-scale)); /* Используем CSS переменную для значения масштабирования */
-        @media (max-width: 767px) {
-            transform: scale(0.9);
-        }
     }
 
     &__cars-info {
@@ -399,13 +412,37 @@ body {
         @media (max-width: 991px) {
             width: 310px;
         }
+        @media (max-width: 767px) {
+            width: 40.42vw;
+            top: 7.17vw;
+        }
     }
+
+    &__cars-info img:first-child {
+        @media (max-width: 767px) {
+            width: 21.64vw;
+        }
+    }
+    &__cars-info img:last-child {
+        @media (max-width: 767px) {
+            width: 16.56vw;
+        }
+    }
+
     &__info {
+        margin-left: auto;
+        margin-right: auto;
+        @media (max-width: 1199px) {
+            margin-top: 60px;
+        }
     }
 
     &__title {
         @extend %Open_Sans_fz49_400;
         margin-bottom: 35px;
+        @media (max-width: 575px) {
+            font-size: 30px;
+        }
     }
 
     &__benefit {
@@ -429,13 +466,15 @@ body {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 36px;
-        width: 463px;
+
+        max-width: 461px;
     }
 
     &__item {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        margin-bottom: 36px;
     }
 
     &__text {
@@ -463,6 +502,10 @@ body {
 .outer-swiper {
     width: 650px;
     height: 508px;
+    @media (max-width: 767px) {
+        width: 84.75vw;
+        height: 66.23vw;
+    }
 
     &__wrapper {
     }
@@ -473,9 +516,16 @@ body {
     }
 
     &__main-img {
-        // height: 280px;
-        width: 508px;
         padding-top: 114px;
+        @media (max-width: 767px) {
+            padding-top: 14.86vw;
+        }
+    }
+    &__main-img img {
+        width: 508px;
+        @media (max-width: 767px) {
+            width: 66.23vw;
+        }
     }
 
     &__pagination {
@@ -483,11 +533,19 @@ body {
     & .swiper-button-prev {
         left: 59.7px;
         top: 28px;
+        @media (max-width: 767px) {
+            left: 7.78vw;
+            top: 3.65vw;
+        }
     }
     & .swiper-button-next {
         left: 59.7px;
         top: auto;
         bottom: 28px;
+        @media (max-width: 767px) {
+            left: 7.78vw;
+            bottom: 3.65vw;
+        }
     }
     & .swiper-button-prev:after {
         color: #fff;
@@ -510,6 +568,11 @@ body {
         width: 180px !important;
         left: 185px !important;
         bottom: 27px !important;
+        @media (max-width: 767px) {
+            width: 23.47vw !important;
+            left: 24.12vw !important;
+            bottom: 3.52vw !important;
+        }
     }
     /* Элемент точки */
     & .swiper-pagination-bullet {
@@ -521,6 +584,11 @@ body {
         margin: 9px !important;
         position: relative;
         opacity: 1;
+        @media (max-width: 767px) {
+            width: 2.35vw;
+            height: 2.35vw;
+            margin: 1.17vw !important;
+        }
     }
     /* Активная точка */
     & .swiper-pagination-bullet-active::before {
@@ -533,6 +601,12 @@ body {
         position: absolute;
         left: -3px;
         top: -3px;
+        @media (max-width: 767px) {
+            width: 3.13vw;
+            height: 3.13vw;
+            left: -0.39vw;
+            top: -0.39vw;
+        }
     }
 
     & .swiper-pagination-bullet:nth-child(2) {
@@ -552,6 +626,10 @@ body {
 .inner-swiper {
     height: 386px;
     width: 142px;
+    @media (max-width: 767px) {
+        height: 50.33vw;
+        width: 18.51vw;
+    }
 
     &__wrapper {
         // display: flex;
@@ -562,6 +640,9 @@ body {
 
     &__slide img {
         border-radius: 4px;
+        @media (max-width: 767px) {
+            width: 18.51vw;
+        }
     }
     & .swiper-button-prev {
         left: 50%;
@@ -599,16 +680,8 @@ body {
         margin: auto;
     }
 
-    @media (max-width: 575px) {
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-        margin: auto;
-    }
     @media (max-width: 320px) {
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
+        width: 90%;
         margin: auto;
     }
 }
