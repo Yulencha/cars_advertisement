@@ -2,6 +2,15 @@
 @import "_fonts";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
 
+:root {
+    --slider-scale: 1; // Определение CSS переменной с дефолтным значением
+}
+@media (max-width: 768px) {
+    :root {
+        --slider-scale: 0.8; // Новое значение масштабирования для ширин меньше 768px
+    }
+}
+
 body {
     font-family: "Open Sans", sans-serif;
 }
@@ -12,18 +21,38 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: 991px) {
+            height: auto;
+        }
     }
     &__top-block {
-        width: 1148px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        margin: 10px 0;
+
+        @media (max-width: 991px) {
+            margin-right: 26px;
+        }
+        @media (max-width: 575px) {
+            margin-right: 0;
+        }
+    }
+    &__logo img {
+        @media (max-width: 380px) {
+            width: 320px;
+        }
     }
 
     &__direction {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 10px 0;
     }
 
     &__direction-marker {
@@ -32,12 +61,23 @@ body {
 
     &__direction-text {
         @extend %Open_Sans_fz12_400;
+        white-space: nowrap;
     }
 
     &__phone {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        margin: 10px 0;
+        @media (max-width: 991px) {
+            flex-grow: 1;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            flex-grow: 0;
+            justify-content: space-between;
+        }
     }
 
     &__phone-img {
@@ -46,6 +86,7 @@ body {
 
     &__phone-num {
         @extend %Open_Sans_fz16_700;
+        white-space: nowrap;
     }
 
     &__button-call {
@@ -55,6 +96,11 @@ body {
         color: #002d96;
         background-color: white;
         border: 1px solid #002d96;
+        margin-left: 20px;
+        @media (max-width: 370px) {
+            width: 120px;
+            font-size: 12px;
+        }
     }
 
     &__bottom {
@@ -63,12 +109,28 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: 991px) {
+            height: auto;
+        }
     }
     &__bottom-block {
-        width: 1148px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    &__separator {
+        position: absolute;
+        top: 43%;
+        width: 100%;
+        height: 3px;
+        background-color: #3d474e;
+        border: 0.5px solid #2e373d;
+        visibility: hidden;
+        @media (max-width: 914px) {
+            visibility: visible;
+        }
     }
 
     &__cars-name {
@@ -76,6 +138,11 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 15px 0;
+
+        // @media (max-width: 991px) {
+        //     width: 100%;
+        // }
     }
 
     &__menu {
@@ -83,6 +150,14 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // flex-wrap: wrap;
+        margin: 15px 0;
+        gap: 5px;
+    }
+
+    &__menu a:first-child {
+        white-space: wrap;
+        width: 83px;
     }
 }
 
@@ -90,6 +165,10 @@ body {
     &__item {
         color: white;
         @extend %Open_Sans_fz13_400;
+        @media (max-width: 575px) {
+            font-size: 10px;
+            white-space: nowrap;
+        }
     }
 }
 .banner {
@@ -115,20 +194,32 @@ body {
     &__title {
         @extend %Open_Sans_fz43_700;
         margin-bottom: 24px;
+        @media (max-width: 767px) {
+            font-size: 5.5vw;
+            white-space: nowrap;
+        }
     }
     &__title_large {
         @extend %Open_Sans_fz50_700;
+        @media (max-width: 767px) {
+            font-size: 6.5vw;
+            white-space: nowrap;
+        }
     }
 
     &__subtitle {
         @extend %Open_Sans_fz35_400;
+        @media (max-width: 767px) {
+            font-size: 4.5vw;
+            white-space: nowrap;
+        }
     }
 
     &__bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 1148px;
+        flex-wrap: wrap;
     }
 
     &__form {
@@ -148,6 +239,7 @@ body {
     &__block {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         margin-bottom: 25px;
     }
 
@@ -157,6 +249,7 @@ body {
         background-color: white;
         border: 1px solid black;
         margin-right: 16px;
+        margin-bottom: 16px;
     }
 
     &__phone::placeholder {
@@ -264,118 +357,6 @@ body {
     min-height: 0;
 }
 
-.slider-big {
-    min-width: 0;
-    min-height: 0;
-    // width: 548px;
-
-    &__item {
-        display: flex;
-        // flex-direction: row;
-        min-width: 0;
-        min-height: 0;
-    }
-
-    & .slick-track {
-        display: flex;
-        // flex-direction: row;
-        // height: 508px;
-        min-width: 0;
-        min-height: 0;
-    }
-    & .slick-list {
-        overflow: hidden;
-        min-width: 0;
-        min-height: 0;
-    }
-    & .slick-dots {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    & .slick-dots li {
-        list-style: none;
-    }
-    /* Активная точка */
-    & .slick-dots li.slick-active button::before {
-        content: "";
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: none;
-        border: 1px solid white;
-        position: absolute;
-        left: -3px;
-        top: -3px;
-    }
-    /* Элемент точки */
-    & .slick-dots li button {
-        font-size: 0;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background-color: #ff0000;
-        margin: 9px;
-        position: relative;
-    }
-
-    & .slick-dots li:nth-child(2) button {
-        background-color: #c0c0c0;
-    }
-    & .slick-dots li:nth-child(3) button {
-        background-color: #ffffff;
-    }
-    & .slick-dots li:nth-child(4) button {
-        background-color: #696969;
-    }
-    & .slick-dots li:nth-child(5) button {
-        background-color: #49b6d0;
-    }
-}
-
-.slider-mini {
-    width: 142px;
-    min-width: 142px;
-    min-height: 0;
-
-    & .slick-list {
-        overflow: hidden;
-        height: 377px;
-        min-width: 0;
-        min-height: 0;
-    }
-
-    & .slick-arrow {
-        width: 30px;
-        display: block;
-        margin: 0 auto;
-        cursor: pointer;
-        opacity: 30%;
-    }
-
-    & .slick-slide {
-        border-bottom: 8px solid rgba(0, 0, 0, 0);
-        border-top: 8px solid rgba(0, 0, 0, 0);
-    }
-
-    & .slick-track {
-        min-width: 0;
-        min-height: 0;
-    }
-
-    & .slick-arrow.slick-prev {
-        margin-bottom: 8px;
-    }
-
-    & .slick-arrow.slick-next {
-        margin-top: 8px;
-    }
-
-    &__item {
-        min-width: 0;
-        min-height: 0;
-    }
-}
 .offer {
     margin-top: 118px;
     background-image: url("../img/slider_background.png");
@@ -385,36 +366,23 @@ body {
     justify-content: center;
     position: relative;
     height: 508px;
+    @media (max-width: 1199px) {
+        background-position: right 30vw top;
+    }
 
     &__wrap {
-        width: 1148px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         min-width: 0;
         min-height: 0;
         flex-wrap: wrap;
+        transform: scale(var(--slider-scale)); /* Используем CSS переменную для значения масштабирования */
+        @media (max-width: 767px) {
+            transform: scale(0.9);
+        }
     }
-    &__cars-slider {
-        display: flex;
-        min-width: 0;
-        min-height: 0;
-        width: 685px;
-        height: 508px;
-        margin-bottom: 50px;
-    }
-    &__col1 {
-        margin-top: 28px;
-        // min-width: 0;
-        // min-height: 0;
-    }
-    &__col2 {
-        margin-top: 172px;
-        // margin-left: -34px;
-        height: 280px;
-        // display: flex;
-        // min-width: 0;
-        // min-height: 0;
-    }
+
     &__cars-info {
         position: absolute;
         display: flex;
@@ -424,6 +392,13 @@ body {
         width: 342px;
         top: 55px;
         margin-left: 170px;
+        @media (max-width: 1199px) {
+            margin-left: 0;
+            right: 31%;
+        }
+        @media (max-width: 991px) {
+            width: 310px;
+        }
     }
     &__info {
     }
@@ -483,4 +458,157 @@ body {
 
 .footer {
     height: 110px;
+}
+
+.outer-swiper {
+    width: 650px;
+    height: 508px;
+
+    &__wrapper {
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__main-img {
+        // height: 280px;
+        width: 508px;
+        padding-top: 114px;
+    }
+
+    &__pagination {
+    }
+    & .swiper-button-prev {
+        left: 59.7px;
+        top: 28px;
+    }
+    & .swiper-button-next {
+        left: 59.7px;
+        top: auto;
+        bottom: 28px;
+    }
+    & .swiper-button-prev:after {
+        color: #fff;
+        opacity: 30%;
+
+        position: absolute;
+        transform: rotate(90deg) translate(50%, 0);
+    }
+
+    & .swiper-button-next:after {
+        color: #fff;
+        opacity: 30%;
+        position: absolute;
+        transform: rotate(90deg) translate(50%, 0);
+        right: auto;
+        left: auto;
+        top: auto;
+    }
+    & .swiper-pagination {
+        width: 180px !important;
+        left: 185px !important;
+        bottom: 27px !important;
+    }
+    /* Элемент точки */
+    & .swiper-pagination-bullet {
+        font-size: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        margin: 9px !important;
+        position: relative;
+        opacity: 1;
+    }
+    /* Активная точка */
+    & .swiper-pagination-bullet-active::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: none;
+        border: 1px solid white;
+        position: absolute;
+        left: -3px;
+        top: -3px;
+    }
+
+    & .swiper-pagination-bullet:nth-child(2) {
+        background-color: #c0c0c0;
+    }
+    & .swiper-pagination-bullet:nth-child(3) {
+        background-color: #ffffff;
+    }
+    & .swiper-pagination-bullet:nth-child(4) {
+        background-color: #696969;
+    }
+    & .swiper-pagination-bullet:nth-child(5) {
+        background-color: #49b6d0;
+    }
+}
+
+.inner-swiper {
+    height: 386px;
+    width: 142px;
+
+    &__wrapper {
+        // display: flex;
+        // flex-direction: column;
+        // height: 387px !important;
+        // overflow: hidden;
+    }
+
+    &__slide img {
+        border-radius: 4px;
+    }
+    & .swiper-button-prev {
+        left: 50%;
+        top: 0;
+    }
+}
+
+.swiper-slide.outer-swiper__slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wrapper {
+    width: 1148px;
+    margin: auto;
+
+    @media (max-width: 1415px) {
+        width: 1148px;
+        margin: auto;
+    }
+
+    @media (max-width: 1199px) {
+        width: 980px;
+        margin: auto;
+    }
+
+    @media (max-width: 991px) {
+        width: 95%;
+        margin: auto;
+    }
+
+    @media (max-width: 767px) {
+        width: 90%;
+        margin: auto;
+    }
+
+    @media (max-width: 575px) {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: auto;
+    }
+    @media (max-width: 320px) {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: auto;
+    }
 }

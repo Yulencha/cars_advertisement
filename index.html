@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <title></title>
   </head>
   <body>
     <div class="header">
       <div class="header__top">
-        <div class="header__top-block">
+        <div class="header__top-block wrapper">
           <div class="header__logo logo">
             <img src="./img/logo.png" alt="logo" />
           </div>
@@ -27,18 +31,19 @@
               <img src="./img/call.png" alt="phone" />
             </div>
             <div class="header__phone-num">+ 7 (778) 003-76-86</div>
+            <button class="header__button-call">Заказать звонок</button>
           </div>
-          <button class="header__button-call">Заказать звонок</button>
         </div>
       </div>
       <div class="header__bottom">
-        <div class="header__bottom-block">
+        <div class="header__bottom-block wrapper">
           <nav class="header__cars-name nav">
             <a href="#" class="nav__item">COOLRAY</a>
             <a href="#" class="nav__item">AZKARRA</a>
             <a href="#" class="nav__item">TUGELLA</a>
             <a href="#" class="nav__item">MONJARO</a>
           </nav>
+          <div class="header__separator"></div>
           <nav class="header__menu nav">
             <a href="#" class="nav__item">ПОДБОР КОМПЛЕКТАЦИЙ</a>
             <a href="#" class="nav__item">ТРЕЙД-ИН</a>
@@ -51,7 +56,7 @@
     </div>
     <div class="banner">
       <div class="banner__background">
-        <div class="banner__text">
+        <div class="banner__text wrapper">
           <div class="banner__title">
             GEELY с выгодой <span class="banner__title_large">3 000 000</span> ₸
           </div>
@@ -59,7 +64,7 @@
           <div class="banner__subtitle">Кредит на 2 года ставка — 10%</div>
           <div class="banner__subtitle">Кредит на 5 лет ставка — 15.5%</div>
         </div>
-        <div class="banner__bottom">
+        <div class="banner__bottom wrapper">
           <form class="banner__form form">
             <p class="form__text">Успейте забронировать!</p>
             <div class="form__block">
@@ -97,42 +102,199 @@
       </div>
     </div>
     <div class="offer">
-      <div class="offer__wrap">
-        <div class="offer__cars-slider">
-          <div class="offer__col1 slider-mini">
-            <div class="slider-mini__item">
-              <img src="./img/cars_color/1/1.png" alt="Вид спереди" />
+      <div class="offer__wrap wrapper">
+        <!-- Slider main container -->
+        <div class="swiper outer-swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper outer-swiper__wrapper">
+            <!-- Slides -->
+            <!-- Slide 1 -->
+            <div class="swiper-slide outer-swiper__slide">
+              <!-- mini-swiper -->
+              <!-- Slider main container mini-swiper -->
+              <div class="swiper inner-swiper">
+                <!-- Additional required wrapper mini-swiper -->
+                <div class="swiper-wrapper inner-swiper__wrapper">
+                  <!-- Slides mini-swiper -->
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/1.png" alt="Вид спереди" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/2.png" alt="Вид сзади" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/3.png" alt="Вид сбоку" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/4.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/5.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/1/6.png" alt="Салон1" />
+                  </div>
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Main picture -->
+              <div class="outer-swiper__main-img">
+                <img src="./img/cars_color/1/main.png" alt="Вид сбоку" />
+              </div>
             </div>
-            <div class="slider-mini__item">
-              <img src="./img/cars_color/1/2.png" alt="Вид сбоку" />
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide outer-swiper__slide">
+              <!-- mini-swiper -->
+              <!-- Slider main container mini-swiper -->
+              <div class="swiper inner-swiper">
+                <!-- Additional required wrapper mini-swiper -->
+                <div class="swiper-wrapper inner-swiper__wrapper">
+                  <!-- Slides mini-swiper -->
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/1.png" alt="Вид спереди" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/2.png" alt="Вид сзади" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/3.png" alt="Вид сбоку" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/4.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/5.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/2/6.png" alt="Салон1" />
+                  </div>
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Main picture -->
+              <div class="outer-swiper__main-img">
+                <img src="./img/cars_color/2/main.png" alt="Вид сбоку" />
+              </div>
             </div>
-            <div class="slider-mini__item">
-              <img src="./img/cars_color/1/3.png" alt="Салон1" />
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide outer-swiper__slide">
+              <!-- mini-swiper -->
+              <!-- Slider main container mini-swiper -->
+              <div class="swiper inner-swiper">
+                <!-- Additional required wrapper mini-swiper -->
+                <div class="swiper-wrapper inner-swiper__wrapper">
+                  <!-- Slides mini-swiper -->
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/1.png" alt="Вид спереди" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/2.png" alt="Вид сзади" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/3.png" alt="Вид сбоку" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/4.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/5.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/3/6.png" alt="Салон1" />
+                  </div>
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Main picture -->
+              <div class="outer-swiper__main-img">
+                <img src="./img/cars_color/3/main.png" alt="Вид сбоку" />
+              </div>
             </div>
-            <div class="slider-mini__item">
-              <img src="./img/cars_color/1/4.png" alt="Салон2" />
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide outer-swiper__slide">
+              <!-- mini-swiper -->
+              <!-- Slider main container mini-swiper -->
+              <div class="swiper inner-swiper">
+                <!-- Additional required wrapper mini-swiper -->
+                <div class="swiper-wrapper inner-swiper__wrapper">
+                  <!-- Slides mini-swiper -->
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/1.png" alt="Вид спереди" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/2.png" alt="Вид сзади" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/3.png" alt="Вид сбоку" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/4.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/5.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/4/6.png" alt="Салон1" />
+                  </div>
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Main picture -->
+              <div class="outer-swiper__main-img">
+                <img src="./img/cars_color/4/main.png" alt="Вид сбоку" />
+              </div>
             </div>
-            <div class="slider-mini__item">
-              <img src="./img/cars_color/1/5.png" alt="Салон3" />
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide outer-swiper__slide">
+              <!-- mini-swiper -->
+              <!-- Slider main container mini-swiper -->
+              <div class="swiper inner-swiper">
+                <!-- Additional required wrapper mini-swiper -->
+                <div class="swiper-wrapper inner-swiper__wrapper">
+                  <!-- Slides mini-swiper -->
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/1.png" alt="Вид спереди" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/2.png" alt="Вид сзади" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/3.png" alt="Вид сбоку" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/4.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/5.png" alt="Салон1" />
+                  </div>
+                  <div class="swiper-slide inner-swiper__slide">
+                    <img src="./img/cars_color/5/6.png" alt="Салон1" />
+                  </div>
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Main picture -->
+              <div class="outer-swiper__main-img">
+                <img src="./img/cars_color/5/main.png" alt="Вид сбоку" />
+              </div>
             </div>
           </div>
-          <div class="offer__col2 slider-big">
-            <div class="slider-big__item">
-              <img src="./img/cars_color/1/main.png" alt="Вид сбоку" />
-            </div>
-            <div class="slider-big__item">
-              <img src="./img/cars_color/2/main.png" alt="Вид сбоку" />
-            </div>
-            <div class="slider-big__item">
-              <img src="./img/cars_color/3/main.png" alt="Вид сбоку" />
-            </div>
-            <div class="slider-big__item">
-              <img src="./img/cars_color/4/main.png" alt="Вид сбоку" />
-            </div>
-            <div class="slider-big__item">
-              <img src="./img/cars_color/5/main.png" alt="Вид сбоку" />
-            </div>
-          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination outer-swiper__swiper-pagination"></div>
         </div>
 
         <div class="offer__cars-info">
@@ -190,7 +352,9 @@
     <div class="footer"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./js/slick.min.js" defer></script>
+    <!-- <script src="./js/slick.min.js" defer></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/scripts.js" defer></script>
   </body>
 </html>
