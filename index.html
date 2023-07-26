@@ -83,11 +83,16 @@
                   value="Получить предложение"
                 />
                 <div class="form__agreement">
-                  <input type="checkbox" id="politics" checked />
-                  <span class="checkmark"></span>
-                  <label class="checkbox" for="politics"
+                  <input
+                    class="form__custom-checkbox"
+                    type="checkbox"
+                    id="politics1"
+                    checked
+                  />
+
+                  <label for="politics1"
                     >Согласен на
-                    <a class="form__link" href="ссылка на страницу согласия"
+                    <a class="form__link" href="#"
                       >обработку персональных данных.</a
                     ></label
                   >
@@ -349,10 +354,48 @@
       </div>
     </div>
     <div class="footer"></div>
+    <div class="overlay overlay-click">
+      <div class="popup-wrap">
+        <div class="popup-click">
+          <div class="popup-close"><img src="img/close.svg" alt="" /></div>
+          <form class="banner__form form">
+            <div class="form__block">
+              <input
+                class="form__phone"
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="Номер телефона"
+              />
+              <div class="form__wrap">
+                <input
+                  class="form__send"
+                  type="submit"
+                  value="Получить предложение"
+                />
+                <div class="form__agreement">
+                  <input
+                    class="form__custom-checkbox"
+                    type="checkbox"
+                    id="politics2"
+                    checked
+                  />
+                  <label class="checkbox" for="politics2"
+                    >Согласен на
+                    <a class="form__link" href="#"
+                      >обработку персональных данных.</a
+                    ></label
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="./js/slick.min.js" defer></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/scripts.js" defer></script>
   </body>
