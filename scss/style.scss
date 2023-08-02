@@ -234,6 +234,7 @@ body {
         color: white;
         @extend %Open_Sans_fz20_700;
         margin-bottom: 16px;
+        text-shadow: 2px 2px 5px #061318;
     }
     &__block {
         display: flex;
